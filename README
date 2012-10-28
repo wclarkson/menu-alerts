@@ -1,0 +1,32 @@
+Automated Dining Hall Menu Alerts
+
+Last year my friend suggested that I write a program to send him a text message
+whenever his favorite soup was being served in the dining hall. soup_alert.rb
+is the first attempt at implementing this concept. It uses a basic regular
+expression to determine which soups are being served, which is neither reliable
+nor elegant.
+
+Last April, I participated Tufts University's first annual Hackathon, and
+decided it was time to turn the idea of dining hall alerts into a more
+complete product. The (incomplete) results of this are found in the service
+directory. The concept was a multi-part system that would allow students to
+register for alerts online for only the foods they specified. This consisted
+of a few components:
+1)	a web interface written in PHP that allows users to sign up and stores
+		their account info and food preferences in a sqlite3 database
+2)	 a Ruby program to scrape the online dining hall menu and respond
+		to queries with a list of matching foods for a user
+3)	a Ruby program to read the sqlite3 database and interface with (2) and (4)
+4)	a Ruby program to formulate and send text messages
+
+The first step in this project was a ~3 hour detour to teach myself the basics
+of PHP. Before the Hackathon, the extent of my PHP knowledge was on the level
+of <?php echo "Hello World!"; ?>. I wrote a simple, generic web form to store
+user-entered data in a sqlite3 database. I then moved on to writing the
+collection of Ruby programs which perform most of the work.
+
+Still unfinished:
+- Implementing (1) from the list above
+- An elegant solution for storing the names of all common dishes so
+	users can select from a list or have choices auto-complete (to avoid
+	mistyped entries preventing dish names from matching)
